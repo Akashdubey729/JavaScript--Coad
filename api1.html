@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+
+        <script>
+            const home = () =>{
+                fetch("home.html")
+                .then(xyz => xyz.text( ))
+                .then(filedata=>{
+                   document.getElementById("apidata").innerHTML = filedata;
+                })
+                .catch(error =>{
+                    alert("Error ! Try After SomeTime  !..");
+                })
+
+            }
+
+            const about = () =>{
+                fetch("about.html")
+                .then(xyz => xyz.text( ))
+                .then(filedata=>{
+                   document.getElementById("apidata").innerHTML = filedata;
+                })
+                .catch(error =>{
+                    alert("Error ! Try After SomeTime  !..");
+                })
+
+            }
+
+            const contact = () =>{
+                fetch("contact.html")
+                .then(xyz => xyz.text( ))
+                .then(filedata=>{
+                   document.getElementById("apidata").innerHTML = filedata;
+                })
+                .catch(error =>{
+                    alert("Error ! Try After SomeTime  !..");
+                })
+
+            }
+
+            const product = () =>{
+                fetch("product.html")
+                .then(xyz => xyz.text( ))
+                .then(filedata=>{
+                   document.getElementById("apidata").innerHTML = filedata;
+                })
+                .catch(error =>{
+                    alert("Error ! Try After SomeTime  !..");
+                })
+
+            }
+            const city = () =>{
+                fetch("city.json")
+                .then(abc => abc.json())
+                .then( cityarray=>{
+                    let data = "<h1> City List </h1>";
+                    cityarray.map((cityname, index) => {
+                        data = data + "<p class='three'>" + cityname + "</p>";
+                    })
+                    document.getElementById("apidata").innerHTML = data;
+                })
+        }
+
+        const blog = () =>{
+            fetch("https://jsonplaceholder.typicode.com/posts")
+            .then(response=>response.json())
+            .then( blogArray =>{
+                let temp = "";
+                blogArray.map((blog, index)=>{
+                    temp = temp + "<div class='two'>";
+                    temp = temp + "<h4>" + blog.title + "</h4>";
+                    temp = temp + "<p>" + blog.body + "</p>";
+                    temp = temp + "</div>";
+                })
+                document.getElementById("apidata").innerHTML = temp;
+            })
+        }
+
+        const comment = () =>{
+            fetch("https://jsonplaceholder.typicode.com/comments")
+            .then(response=>response.json())
+            .then(commentArray=>{
+                let temp = "";
+                commentArray.map((comment, index)=>{
+                    temp = temp + "<div class='two'>";
+                    temp = temp + "<h4>" + comment.name + "</h4>";
+                    temp = temp + "<small>" + comment.email + "</small>";
+                    temp = temp + "<p>" + comment.body + "</p>";
+                    temp = temp + "</div>"; 
+                })
+                document.getElementById("apidata").innerHTML = temp;
+            })
+        }
+
+        const albums = () =>{
+            fetch("https://jsonplaceholder.typicode.com/albums")
+            .then(response=>response.json())
+            .then(album=>{
+                let temp = "";
+                album.map((album, index)=>{
+                    temp = temp + "<div class='two'>";
+                    temp = temp + "<h4>" + album.title + "</h4>";
+                    temp = temp + "</div>"; 
+                })
+                document.getElementById("apidata").innerHTML = temp;
+            })
+        }
+
+        const photo = () =>{
+            fetch("https://jsonplaceholder.typicode.com/photos")
+            .then(response=>response.json())
+            .then(photo=>{
+                let temp = "";
+                photo.map((photo, index)=>{
+                    temp = temp + "<div class='two'>";
+                    temp = temp + "<h4>" + photo.title + "</h4>";
+                    temp = temp + "<img src='" + photo.url + "' height='100' width='100'/>";
+                    temp = temp + "<img src='" + photo.thumbnailUrl + "' height='100' width='100'/>";
+                    temp = temp + "</div>"; 
+                })
+                document.getElementById("apidata").innerHTML = temp;
+            })
+        }
+        const todo = () =>{
+            fetch("https://jsonplaceholder.typicode.com/todos")
+            .then(response=>response.json())
+            .then(todo=>{
+                let temp = "";
+                todo.map((todo, index)=>{
+                    temp = temp + "<div class='two'>";
+                    temp = temp + "<h4>" + todo.title + "</h4>";
+                    temp = temp + "<p>" + todo.completed + "</p>";
+                    temp = temp + "</div>"; 
+                })
+                document.getElementById("apidata").innerHTML = temp;
+            })
+        }
+
+        const user = () =>{
+            fetch("https://jsonplaceholder.typicode.com/users")
+            .then(response=>response.json())
+            .then(user=>{
+                let temp = "";
+                user.map((user, index)=>{
+                    temp = temp + "<div class='two'>";
+                    temp = temp + "<h4>" + user.name + "</h4>";
+                    temp = temp + "<small>" + user.email + "</small>";
+                    temp = temp + "<p>" + user.address.city + "</p>";
+                    temp = temp + "<p>" + user.address.zipcode + "</p>";
+                    temp = temp + "<p>" + user.address.geo.lat + "</p>";
+                    temp = temp + "<p>" + user.phone + "</p>";
+                    temp = temp + "<p>" + user.website + "</p>";
+                    temp = temp + "<p>" + user.company.name + "</p>";
+                    temp = temp + "</div>"; 
+                })
+                document.getElementById("apidata").innerHTML = temp;
+            })
+        }
+
+        </script>
+    </head>
+    <body>
+        <header>
+            <button onclick="home()">Home</button>
+            <button onclick="about()">About Us </button>
+            <button onclick="contact()">Contact Us </button>
+            <button onclick="product()"> My Product </button>
+            <button onclick="city()"> My City </button>
+            <button onclick="blog()"> Blogs </button>
+            <button onclick="comment()"> Comments </button>
+            <button onclick="albums()"> Albums </button>
+            <button onclick="photo()"> Photos </button>
+            <button onclick="todo()"> Todos </button>
+            <button onclick="user()"> Users </button>
+        
+        </header>
+        <section id="apidata">
+
+        </section>
+        <footer>
+            <p> Javascript api fetch(), then().then(), .catch() Example </p>
+        </footer>
+    </body>
+</html>

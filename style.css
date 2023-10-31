@@ -1,0 +1,54 @@
+body{
+    margin: 0px;
+}
+
+header{
+    padding: 25px;
+    text-align: center;
+}
+
+button{
+    color: blue;
+    font-size: 22px;
+    padding: 7px 20px 7px;
+}
+button:focus{
+    color: white;
+    background: red;
+}
+#apidata{
+    width: 80%;
+    margin: auto;
+    min-height: 500px;
+}
+footer{
+    background: purple;
+    color: white;
+    padding: 15px;
+    min-height: 130px;
+    text-align: center;
+}
+h1{
+    text-align: center;
+    color: blue;
+    font-size: 70px;
+}
+.three{
+    color: orangered;
+    font-size: 25px;
+    width: 33%;
+    display: inline-block;
+}
+.two{
+    margin: 2%;
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+    border-bottom: 5px dashed orangered;
+    min-height: 200px;
+}
+h4{
+    font-size: 22px;
+    color: blue;
+    text-transform: capitalize;
+}

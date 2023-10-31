@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table{
+                background: khaki;
+                box-shadow: 0px 0px 10px black;
+            }
+        </style>
+        <script>
+            const login = () =>{
+                let username = document.getElementById("email").value;
+                let pass = document.getElementById("password").value;
+                let url = "http://localhost:1234/account?email="+username+"&password="+pass;
+                fetch(url)
+                .then(response =>response.json())
+                .then(userinfo=>{
+                    if( userinfo.length >0 )
+                    {
+                        document.getElementById("message").innerHTML="<font color='blue'> success ! Redirecting</font>";
+                        localStorage.setItem("token", userinfo[0].token);
+                        localStorage.setItem("fullname", userinfo[0].name);
+                        window.location.href="api2.html";
+                    }else{
+                        alert("Invalid or Not Exists.....");
+                        document.getElementById("message").innerHTML="<font color='red'> Invalid or Not Exists.....</font>";
+                    }
+                })
+            }
+        </script>
+    </head>
+    <body>
+        <table align="center" cellpadding="15">
+            <caption>
+                <h1> Login </h1>
+                <p id="message"></p>
+            </caption>
+            <tr>
+                <th> E-Mail</th>
+                <td><input type="email" id="email"/></td>
+            </tr>
+            <tr>
+                <th> password</th>
+                <td><input type="password" id="password"/></td>
+            </tr>
+            <tr>
+                <th colspan="2"> <button onclick="login()">Login</button></th>
+            </tr>
+        </table>
+    </body>
+</html>

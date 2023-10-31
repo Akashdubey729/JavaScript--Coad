@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../3-json-server"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "4-api"
+	}
+}

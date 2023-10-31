@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #container{
+                width: 400px;
+                margin: auto;
+                border: 2px inset blue;
+                padding: 30px;
+                border-radius: 30px;
+                background: skyblue;
+                box-shadow: 0px 0px 10px black;
+            }
+            h1{
+                color: orange;
+                margin-top: 10px;
+            }
+            button{
+                height: 40px;
+                width: 200px;
+                border-radius: 10px;
+                border: none;
+                background: green;
+                color: black;
+            }
+            input{
+                height: 30px;
+                width: 300px;
+            }
+            p{
+                font-size: 20px;
+                color: black;
+            }
+        </style>
+        <script>
+            if(localStorage.getItem("token")==null)
+            {
+                window.location.href="login.html";
+            }
+            const save = () =>{
+                let bookname = document.getElementById("bname").value;
+                let bookprice = document.getElementById("bprice").value;
+                let bookauthor = document.getElementById("bauthor").value;
+                let url = "http://localhost:1234/booklist";
+                let newbook = {
+                    "name": bookname,
+                    "price": bookprice,
+                    "author": bookauthor
+                };
+                let postData ={
+                    headers:{'content-type':'application/json'},
+                    method:"post",
+                    body:JSON.stringify(newbook) //array to json
+                }
+                fetch(url, postData)
+                .then(response=>response.json())
+                .then(bookinfo=>{
+                    alert("Your New Book Id : " + bookinfo.id);
+                    document.getElementById("bname").value ="";
+                    document.getElementById("bprice").value ="";
+                    document.getElementById("bauthor").value ="";
+                    window.location.href="api2.html";
+                })
+            }
+        </script>
+    </head>
+    <body>
+        <center>
+            <div id="container">
+                <h1> Enter Book Details </h1>
+                <p> Book Name </p>
+                <input type="text" id="bname" size="40"/>
+
+                <p> Book Price </p>
+                <input type="number" id="bprice" size="40"/>
+
+                <p> Author </p>
+                <input type="text" id="bauthor" size="40"/>
+
+                 <p>
+                <button onclick="save()"> Save Book </button>
+                </p>
+                <a href="api2.html"> Back To List </a>
+            </div>
+        </center>
+    </body>
+</html>
