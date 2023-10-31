@@ -1,0 +1,233 @@
+{
+  "basic": [
+    {
+      "name": "mohit",
+      "mobile": "07894995655",
+      "email": "mohitsahu@gmail.com",
+      "id": 6
+    },
+    {
+      "name": "Akash Kumar",
+      "mobile": "7894995655",
+      "email": "akashkumar44@gmail.com",
+      "id": 8
+    },
+    {
+      "name": "mohit",
+      "mobile": "07894995655",
+      "email": "mohitsahu@gmail.com",
+      "id": 9
+    }
+  ],
+  "contact": [
+    {
+      "localaddress": "Pune",
+      "Permanentaddress": "Pune",
+      "id": 5
+    },
+    {
+      "localaddress": "Bangalore",
+      "Permanentaddress": "Karanjia, Odisha",
+      "id": 6
+    }
+  ],
+  "education": [
+    {
+      "name": "ssvm",
+      "per": "60",
+      "passing": "2014",
+      "id": 2
+    },
+    {
+      "name": "kbrc",
+      "per": "60",
+      "passing": "2016",
+      "id": 3
+    },
+    {
+      "name": "giet",
+      "per": "81",
+      "passing": "2020",
+      "id": 4
+    },
+    {
+      "name": "ssvm karanjia",
+      "per": "69",
+      "passing": "2014",
+      "id": 5
+    },
+    {
+      "name": "kbrc cuttack",
+      "per": "60",
+      "passing": "2016",
+      "id": 6
+    },
+    {
+      "name": "giet gunupur",
+      "per": "78",
+      "passing": "2020",
+      "id": 7
+    }
+  ],
+  "experience": [
+    {
+      "companywork": "10",
+      "projectwork": "5",
+      "expwork": "5",
+      "skillswork": "css",
+      "id": 2
+    }
+  ],
+  "account": [
+    {
+      "name": "Mohit",
+      "token": "7894995655",
+      "email": "mohitkumarsahu548@gmail.com",
+      "password": "12345",
+      "confirmpassword": "12345",
+      "date": "13",
+      "month": "February",
+      "year": "1998",
+      "address": "Karanjia",
+      "pin": "757037",
+      "state": "Odisha",
+      "dist": "Bhubaneshwar",
+      "id": 1
+    },
+    {
+      "name": "Anupam Choudhury",
+      "token": "8147129513",
+      "email": "anupam.east@gmail.com",
+      "password": "Password_1",
+      "confirmpassword": "Password_1",
+      "date": "14",
+      "month": "December",
+      "year": "1991",
+      "address": "Bangalore",
+      "pin": "560037",
+      "state": "Karnataka",
+      "dist": "Bangalore",
+      "id": 2
+    },
+    {
+      "name": "Akash Sahu",
+      "token": "8917381951",
+      "email": "akashsahu068@gmail.com",
+      "password": "akashsahu",
+      "confirmpassword": "akashsahu",
+      "date": "12",
+      "month": "February",
+      "year": "1995",
+      "address": "karanjia, odisha, 757037",
+      "pin": "757037",
+      "state": "Odisha",
+      "dist": "Bhubaneshwar",
+      "id": 3
+    },
+    {
+      "name": "karanram",
+      "token": "1800123455",
+      "email": "karanram@gmail.com",
+      "password": "Karan098",
+      "confirmpassword": "",
+      "date": "19",
+      "month": "July",
+      "year": "2005",
+      "address": "karanjaia",
+      "pin": "123456",
+      "state": "Himachal Pradesh",
+      "dist": "Shillong",
+      "id": 37
+    },
+    {
+      "name": "Karan sahu",
+      "token": "9337678837",
+      "email": "karankumarsahu@gmail.com",
+      "password": "Karan1234",
+      "confirmpassword": "karan1234",
+      "date": "16",
+      "month": "February",
+      "year": "1998",
+      "address": "bhubanaswer",
+      "pin": "780045",
+      "state": "Karnataka",
+      "dist": "Bangalore",
+      "id": 38
+    },
+    {
+      "name": "mohit sahu",
+      "token": "07894995655",
+      "email": "mohitsahu@gmail.com",
+      "password": "Mohit098",
+      "confirmpassword": "",
+      "date": "17",
+      "month": "April",
+      "year": "2006",
+      "address": "bbsr",
+      "pin": "758001",
+      "state": "Odisha",
+      "dist": "Aizawl",
+      "id": 39
+    },
+    {
+      "name": "shubham",
+      "token": "9777991891",
+      "email": "shubhamsahu@gmail.com",
+      "password": "Shubham098",
+      "confirmpassword": "",
+      "date": "19",
+      "month": "July",
+      "year": "2004",
+      "address": "Karanjia",
+      "pin": "757037",
+      "state": "Odisha",
+      "dist": "Kohima",
+      "id": 40
+    },
+    {
+      "name": "Mohit Kumar sahu",
+      "token": "9337678837",
+      "email": "mohitkumarsahu068@gmail.com",
+      "password": "Mohit068",
+      "confirmpassword": "mohit068",
+      "date": "13",
+      "month": "February",
+      "year": "1998",
+      "address": "Karanjia",
+      "pin": "757037",
+      "state": "Odisha",
+      "dist": "Bhubaneshwar",
+      "id": 41
+    },
+    {
+      "name": "akash",
+      "token": "7894995655",
+      "email": "akash@gmail.com",
+      "password": "Akash098",
+      "confirmpassword": "",
+      "date": "17",
+      "month": "April",
+      "year": "2008",
+      "address": "bbsr",
+      "pin": "758001",
+      "state": "Odisha",
+      "dist": "Bhubaneshwar",
+      "id": 42
+    },
+    {
+      "name": "mohit",
+      "token": "07894995655",
+      "email": "mohit@gmail.com",
+      "password": "Akash098",
+      "confirmpassword": "",
+      "date": "17",
+      "month": "April",
+      "year": "2006",
+      "address": "bbsr",
+      "pin": "758001",
+      "state": "Odisha",
+      "dist": "Lucknow",
+      "id": 43
+    }
+  ]
+}

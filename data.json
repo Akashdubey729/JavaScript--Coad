@@ -1,0 +1,77 @@
+{
+  "booklist": [
+    {
+      "id": 1,
+      "name": "HTML",
+      "price": 3000,
+      "author": "Alex"
+    },
+    {
+      "name": "HTMLfgrgs",
+      "price": "500",
+      "author": "Mohit ",
+      "id": 2
+    },
+    {
+      "name": "REACT",
+      "price": "6000",
+      "author": "Karan",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "name": "REACT",
+      "price": 6000,
+      "author": "Rohit"
+    },
+    {
+      "name": "Karan",
+      "price": "500",
+      "author": "atkc",
+      "id": 6
+    },
+    {
+      "name": "DDf",
+      "price": "4653",
+      "author": "earzg",
+      "id": 7
+    },
+    {
+      "name": "hhh",
+      "price": "555",
+      "author": "j",
+      "id": 8
+    },
+    {
+      "name": "dfSF",
+      "price": "5555",
+      "author": "rrgD",
+      "id": 9
+    }
+  ],
+  "productlist": [
+    {
+      "id": 1,
+      "pname": "printer",
+      "price": 15000,
+      "qty": 10
+    },
+    {
+      "id": 2,
+      "pname": "Scanner",
+      "price": 20000,
+      "qty": 6
+    },
+    {
+      "id": 3,
+      "pname": "Mouse",
+      "price": 1000,
+      "qty": 15
+    }
+  ],
+  "companylist": [],
+  "account": [
+    {"id":1, "name":"Admin1", "email":"admin1@gmail.com", "password":"123", "token":"111111"},
+    {"id":2, "name":"Admin2", "email":"admin2@gmail.com", "password":"1234", "token":"222222"}
+  ]
+}
