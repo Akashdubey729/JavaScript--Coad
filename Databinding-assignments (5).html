@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #container{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                text-align: center;
+            }
+            #para1{
+                border: 1px solid black;
+                height: 300px;
+                width: 200px;
+                margin-left: 80px;
+            }
+        </style>
+        <script>
+            let alluser = [];
+            const one = () =>{
+                const text1 = document.getElementById("text1").value;
+                alluser.push( text1);
+                document.getElementById("text1").value="";
+            }
+            const user = () =>{
+                let temp = "";
+                alluser.map((name, index)=>{
+                    temp = temp + "<p>" + name + "</p>"
+                })
+                document.getElementById("text2").innerHTML = temp;
+                
+            }
+
+            let allcompany = [];
+            const two = () =>{
+                const text1 = document.getElementById("text1").value;
+                allcompany.push( text1);
+                document.getElementById("text1").value="";
+            }
+            const company = () =>{
+                let temp = "";
+                allcompany.map((name, index)=>{
+                    temp = temp + "<p>" + name + "</p>"
+                })
+                document.getElementById("text3").innerHTML = temp;
+                
+            }
+
+            let allemp = [];
+            const three = () =>{
+                const text1 = document.getElementById("text1").value;
+                allemp.push( text1);
+                document.getElementById("text1").value="";
+            }
+            const emp = () =>{
+                let temp = "";
+                allemp.map((cityname, index)=>{
+                    temp = temp + "<p>" + cityname + "</p>"
+                })
+                document.getElementById("text4").innerHTML = temp;
+                
+            }
+
+            let allbook = [];
+            const four = () =>{
+                const text1 = document.getElementById("text1").value;
+                allbook.push( text1);
+                document.getElementById("text1").value="";
+            }
+            const book = () =>{
+                let temp = "";
+                allbook.map((cityname, index)=>{
+                    temp = temp + "<p>" + cityname + "</p>"
+                })
+                document.getElementById("text5").innerHTML = temp;
+                
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1 align="center"> Assignment3 </h1>
+        </header>
+        <div align="center">
+            <input type="text" id="text1" placeholder="Enter New Record"/>
+            <button onclick="one()" id="saveuser"/> Save User</button>
+            <button onclick="two()" id="savecompany"> Save Company</button>
+            <button onclick="three()" id="saveemp"> Save Emp</button>
+            <button onclick="four()" id="savebook"> Save Book</button>
+        </div>
+        <br/>
+        <br/>
+        <section id="container">
+            <div>
+                <button onclick="user()"> Get User</button>
+                <div id="para1">
+                    <p id="text2"></p>
+                </div>
+            </div>
+            <div>
+                <button onclick="company()"> Get Company</button>
+                <div id="para1">
+                    <p id="text3"></p>
+                </div>
+            </div>
+            <div>
+                <button onclick="emp()"> Get Emp</button>
+                <div id="para1">
+                    <p id="text4"></p>
+                </div>
+            </div>
+            <div>
+                <button onclick="book()"> Get Book</button>
+                <div id="para1">
+                    <p id="text5"></p>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            section{
+                display: grid;
+                grid-template-columns: 30% 70%;
+            }
+            #details{
+                border: 1px solid blue;
+                height: 500px;
+                width: 95%;
+                background: khaki;
+                margin: 10px;
+                text-align: center;
+                border-radius: 20px;
+            }
+            #Profile{
+                border: 1px solid blue;
+                height: 500px;
+                width: 95%;
+                background: khaki;
+                margin: 10px;
+                text-align: center;
+                border-radius: 20px;
+            }
+            hr{
+                border: 2px solid blue;
+            }
+            p{
+                color: blue;
+            }
+        </style>
+        <script>
+            let mohit = [
+                {
+                    fullname: "Mohit",
+                    age: "25 Years",
+                    education: "B.tech",
+                    year: 2020,
+                    dob: "25-11-1998",
+                    city: "Bangalore",
+                    exp: "2 years",
+                    skill: ['html', 'css', 'react', 'nodejs', 'javascript', 'php', 'mysql']
+                }
+            ];
+
+            let karan = [
+                {
+                    fullname: "Karan",
+                    age: "25 Years",
+                    education: "B.tech",
+                    year: 2020,
+                    dob: "25-09-1998",
+                    city: "Bangalore",
+                    exp: "2 years",
+                    skill: ['html', 'css', 'react', 'nodejs', 'javascript', 'php', 'mysql']
+                }
+            ];
+
+            let bikash = [
+                {
+                    fullname: "Bikash",
+                    age: "40 Years",
+                    education: "M.tech",
+                    year: 2010,
+                    dob: "25-11-2008",
+                    city: "Bangalore",
+                    exp: "3 years",
+                    skill: ['html', 'css', 'react', 'nodejs', 'javascript', 'php', 'mysql']
+                }
+            ];
+
+            let mukesh = [
+                {
+                    fullname: "Mukesh",
+                    age: "35 Years",
+                    education: "MCA",
+                    year: 2010,
+                    dob: "25-11-2008",
+                    city: "Bangalore",
+                    exp: "5 years",
+                    skill: ['html', 'css', 'react', 'nodejs', 'javascript', 'php', 'mysql']
+                }
+            ];
+
+            const one = () => {
+                let data = "";
+                mohit.map((user, index) => {
+                    data +="<div class='myuser'>";
+                    data += "<p> Full Name :" + user.fullname + "</p>";
+                    data += "<p> Age :" + user.age + "</p>";
+                    data += "<p> Education :" + user.education + "</p>";
+                    data += "<p> Passing Year :" + user.year + "</p>";
+                    data += "<p> Date Of Birth :" + user.dob + "</p>";
+                    data += "<p> City :" + user.city + "</p>";
+                    data += "<p> Exprience :" + user.exp + "</p>";
+                    data += "<p> Skills :" + user.skill + "</p>";
+                    data +="</div>";
+                })
+                document.getElementById("container").innerHTML = data;
+            }
+
+            const two = () => {
+                let data = "";
+                karan.map((user, index) => {
+                    data +="<div class='myuser'>";
+                    data += "<p> Full Name :" + user.fullname + "</p>";
+                    data += "<p> Age :" + user.age + "</p>";
+                    data += "<p> Education :" + user.education + "</p>";
+                    data += "<p> Passing Year :" + user.year + "</p>";
+                    data += "<p> Date Of Birth :" + user.dob + "</p>";
+                    data += "<p> City :" + user.city + "</p>";
+                    data += "<p> Exprience :" + user.exp + "</p>";
+                    data += "<p> Skills :" + user.skill + "</p>";
+                    data +="</div>";
+                })
+                document.getElementById("container").innerHTML = data;
+            }
+
+            const three = () => {
+                let data = "";
+                bikash.map((user, index) => {
+                    data +="<div class='myuser'>";
+                    data += "<p> Full Name :" + user.fullname + "</p>";
+                    data += "<p> Age :" + user.age + "</p>";
+                    data += "<p> Education :" + user.education + "</p>";
+                    data += "<p> Passing Year :" + user.year + "</p>";
+                    data += "<p> Date Of Birth :" + user.dob + "</p>";
+                    data += "<p> City :" + user.city + "</p>";
+                    data += "<p> Exprience :" + user.exp + "</p>";
+                    data += "<p> Skills :" + user.skill + "</p>";
+                    data +="</div>";
+                })
+                document.getElementById("container").innerHTML = data;
+            }
+
+            const four = () => {
+                let data = "";
+                mukesh.map((user, index) => {
+                    data +="<div class='myuser'>";
+                    data += "<p> Full Name :" + user.fullname + "</p>";
+                    data += "<p> Age :" + user.age + "</p>";
+                    data += "<p> Education :" + user.education + "</p>";
+                    data += "<p> Passing Year :" + user.year + "</p>";
+                    data += "<p> Date Of Birth :" + user.dob + "</p>";
+                    data += "<p> City :" + user.city + "</p>";
+                    data += "<p> Exprience :" + user.exp + "</p>";
+                    data += "<p> Skills :" + user.skill + "</p>";
+                    data +="</div>";
+                })
+                document.getElementById("container").innerHTML = data;
+            }
+        </script>
+    </head>
+    <body>
+        <h1 align="center">Assignment : 4</h1>
+        <section>
+            <div id="Profile">
+                <h1> Available Profile </h1>
+                <hr/>
+                <label for="one">
+                    <p onclick="one()" id="one">Mohit</p>
+                </label>
+                <br/>
+                <label for="two">
+                    <p onclick="two()" id="two">Karan</p>
+                </label>
+                <br/>
+                <label for="three">
+                    <p onclick="three()" id="three">Bikash</p>
+                </label>
+                <br/>
+                <label for="four">
+                    <p onclick="four()" id="four">Mukesh</p>
+                </label>
+                
+            </div>
+            <div id="details">
+                <h1>
+                    Profile Details
+                </h1>
+                <hr/>
+                <div id="container">
+
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
