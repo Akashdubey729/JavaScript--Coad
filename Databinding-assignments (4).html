@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #box1{
+                text-align: center;
+                border: 1px solid black;
+                width: 600px;
+                margin-left: 400px;
+            }
+            #container{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                width: 80%;
+                margin: auto;
+            }
+        </style>
+        <script>
+            let allcity = [];
+            let object = 
+                {
+                    let fullname = name = [],
+                    age: "40 Years",
+                    education: "M.tech",
+                    year: 2010,
+                    dob: "25-11-2008",
+                    city: "Bangalore",
+                    exp: "3 years",
+                    skill: ['html', 'css', 'react', 'nodejs', 'javascript', 'php', 'mysql']
+                }
+            ;
+            const save = () =>{
+                const newcity = document.getElementById("newcity").value;
+                allcity.push( newcity);
+                getcity();
+                document.getElementById("newcity").value="";
+
+                const newname = document.getElementById("newname").value;
+                allcity.push( newname);
+                getcity();
+                document.getElementById("newname").value="";
+            }
+            const getcity = () =>{
+                let temp = "";
+                allcity.map((cityname, index)=>{
+                    temp = temp + "<p>" + index + "<br/>" + cityname + "<br/>" + cityname.length + "</p>"
+                })
+                document.getElementById("container").innerHTML = temp;
+            }
+        </script>
+    </head>
+    <body>
+        <h1 align="center"> Assignment - 2</h1>
+        <div id="box1">
+            <br/>
+            <br/>
+            <div>
+                Enter City : <input type="text" id="newcity"/>
+                            <input type="text" id="newname"/>
+                             <button onclick="save()">Save</button>
+            </div>
+            <section id="container">
+
+            </section>
+        </div>
+    </body>
+</html>

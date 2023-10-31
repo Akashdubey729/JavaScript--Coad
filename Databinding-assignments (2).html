@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .card{
+            box-shadow: 0px 0px 40px black;
+        }
+        table{
+            box-shadow: 0px 0px 10px black;
+        }
+    </style>
+    <head>
+        <link rel="stylesheet" href="../../../bootstrap/bootstrap-5.3.1 (1)/icon/css/all.css"/>
+        <link rel="stylesheet" href="../../../bootstrap/bootstrap-5.3.1 (1)/dist/css/bootstrap.css"/>
+        <script src="../../../bootstrap/bootstrap-5.3.1 (1)/dist/js/bootstrap.bundle.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            let itemlist = [];
+            const delbook = (index) =>{
+                let item = itemlist[index];
+                itemlist.splice(index, 1); 
+                //index the position of element to be deleted
+                //1 is the no of element should get delete from given position
+                getitem();
+                swal(item.Number, "Deleted Successfully", "warning");
+            }
+
+            const getitem =()=>{
+                let temp ="";
+                itemlist.map((item, index)=>{
+                    temp += "<tr>"
+                        temp += "<td>" + index + "</td>";
+                        temp += "<td>" + item.Number + "</td>";
+                        temp += "<td>" + item.root + "</td>";
+                        temp += "<td>" + item.mail + "</td>";
+                        temp += "<td>" + item.psize + "</td>";
+                        temp += "<td>" + item.name + "</td>";
+                        temp += "<td>" + item.pnumber + "</td>";
+                        temp = temp + "<td><button onclick='delbook("+ index +")' class='btn btn-primary'><i class='fa fa-trash'></i> </button></td>";
+                    temp += "</tr>"
+                })
+                document.getElementById("box").innerHTML = temp;
+            }
+
+            const save = () =>{
+                let tnumbar = document.getElementById("tnumbar").value;
+                let rname = document.getElementById("rname").value;
+                let email = document.getElementById("email").value;
+                let size = document.getElementById("size").value;
+                let dname = document.getElementById("dname").value;
+                let dnumber = document.getElementById("dnumber").value;
+                let newitem = {Number :tnumbar, root:rname, mail:email, psize:size, name:dname, pnumber:dnumber};
+                itemlist = itemlist.concat( newitem );
+                document.getElementById("tnumbar").value="";
+                document.getElementById("rname").value="";
+                document.getElementById("email").value="";
+                document.getElementById("size").value="";
+                document.getElementById("dname").value="";
+                document.getElementById("dnumber").value="";
+                swal(tnumbar, "Save Sucessfully", "success");
+                getitem(); //to Reload The Page
+            }
+           
+        </script>
+           
+    </head>
+    <body class="bg-info">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-12 col-12 text-center"><h1>Assignment - 5 </h1></div>
+                <div class="col-lg-4 mt-4">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    New Transport <i class="fa fa-truck-arrow-right"></i>
+                                </div>
+                                <div class="card-body">
+                                    <div>
+                                        <label> <h6>Emp Name</h6> </label>
+                                        <input type="text" id="tnumbar" class="form-control mt-3" placeholder="Emp Name">
+                                    </div>
+                                    <div>
+                                        <label> <h6>Emp Mobile Number </h6></label>
+                                        <input type="text" id="rname" class="form-control mt-3" placeholder="Emp Mobile No">
+                                    </div>
+                                    <div>
+                                        <label> <h6>Emp Email</h6> </label>
+                                        <input type="email" id="email" class="form-control mt-3" placeholder="Emp Email">
+                                    </div>
+                                    <div>
+                                        <label><h6> Emp Department</h6> </label>
+                                        <select class="form-select mt-3" id="size">
+                                            <option>Department</option>
+                                            <option>Mechanical</option>
+                                            <option>CSE</option>
+                                            <option>ECE</option>
+                                            <option>Civil</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label> <h6>Emp Salary</h6> </label>
+                                        <input type="text" id="dname" class="form-control mt-3" placeholder="Emp Salary">
+                                    </div>
+                                    <div>
+                                        <label><h6> Emp Joining Date</h6> </label>
+                                        <input type="date" id="dnumber" class="form-control mt-3">
+                                    </div>
+                                    <div class="text-center">
+                                        <p id="bt1"><button class="btn btn-primary mt-3 btn btn-lg" onclick="save()">Save</button></p>
+                                    </div>
+                                </div>
+                                
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 mt-4 text-center">
+                    <div class="table-responsive">
+                    <table class="table table-hover table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th> Sl.No </th>
+                                <th> Emp Name</th>
+                                <th> Mobile No </th>
+                                <th> Email  </th>
+                                <th> Department </th>
+                                <th> Salary </th>
+                                <th> Joining Date</th>
+                                <th> Action </th>
+                            </tr>
+                        </thead>
+                        <tbody id="box">
+
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
