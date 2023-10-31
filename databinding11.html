@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <script>
+            let allbook = ["HTML", "CSS", "Javascript", "REACT", "Angular", "Node", "Python"];
+
+            const delbook = (index) =>{
+                let bookname = allbook[index];
+                allbook.splice(index, 1); 
+                //index the position of element to be deleted
+                //1 is the no of element should get delete from given position
+                getbook();
+                swal(bookname, "Deleted Successfully", "warning");
+
+            }
+            const getbook = () =>{
+            let temp = "";
+            allbook.map((bookname, index)=>{
+                temp = temp + "<tr>";
+                temp = temp + "<td>" + index + "</td>"
+                temp = temp + "<td>" + bookname + "</td>"
+                temp = temp + "<td><button onclick='delbook("+ index +")'> Delete </button></td>";
+                temp = temp + "</tr>";
+            })
+            document.getElementById("container").innerHTML = temp;
+            }
+
+            const save = () =>{
+                let newbook = document.getElementById("newbook").value;
+                allbook.push( newbook ); //add new element at end of array
+                getbook(); //to reload after adding new book
+                document.getElementById("newbook").value=""; // empty textbox
+                swal(newbook, "Save Sucessfully", "success");
+            }
+        </script>
+    </head>
+    <body onload="getbook()">
+        <h1 align="center"> Single Dimension Array Add, List, Delete </h1>
+        <div align="center">
+            Enter Book Name : <input type="text" id="newbook"/>
+                              <button onclick="save()"> Save </button>
+        </div>
+        <br/>
+        <br/>
+        <table align="center" cellpadding="15" border="1" border color="red">
+            <thead>
+                <tr>
+                    <th> Item Index </th>
+                    <th> Item Name </th>
+                    <th> Delete </th>
+                </tr>
+            </thead>
+            <tbody id="container">
+
+            </tbody>
+        </table>
+    </body>
+</html>

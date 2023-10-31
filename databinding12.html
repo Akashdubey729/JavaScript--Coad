@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            let user ={
+                fullname : "alex",
+                age : "40 Years",
+                education : "MCA",
+                year : 2010,
+                dob : "25-11-2008",
+                city : "Bangalore",
+                exp : "5 years",
+                skill : ['html', 'css', 'react', 'nodejs', 'javascript', 'php', 'mysql']
+            };
+
+            const userinfo = () =>{
+                let data = "<h1> User Information </h1>";
+                data += "<p> Full Name :" + user.fullname + "</p>";
+                data += "<p> Age :" + user.age + "</p>";
+                data += "<p> Education :" + user.education + "</p>";
+                data += "<p> Passing Year :" + user.year + "</p>";
+                data += "<p> Date Of Birth :" + user.dob + "</p>";
+                data += "<p> City :" + user.city + "</p>";
+                data += "<p> Exprience :" + user.exp + "</p>";
+                data += "<p> Skills :" + user.skill + "</p>";
+                document.getElementById("container").innerHTML = data;
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="userinfo()">Print User</button>
+        <br/>
+        <section id="container"></section>
+    </body>
+</html>

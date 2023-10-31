@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #container{
+            width: 80%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+        .myuser{
+            margin: 40px;
+            padding: 20px;
+            border: 10px dashed orange;
+            background: skyblue;
+        }
+        p{ color: blue; font-size: 25px; word-break: break-all;}
+    </style>
+    <script>
+        let userlist = [
+            {
+                fullname: "alex",
+                age: "40 Years",
+                education: "MCA",
+                year: 2010,
+                dob: "25-11-2008",
+                city: "Bangalore",
+                exp: "5 years",
+                skill: ['html', 'css', 'react', 'nodejs', 'javascript', 'php', 'mysql']
+            },
+            {
+                fullname: "Ganesh",
+                age: "42 Years",
+                education: "MA",
+                year: 2013,
+                dob: "28-03-2008",
+                city: "Bangalore",
+                exp: "6 years",
+                skill: ['html', 'css', 'react', 'php', 'mysql']
+            },
+            {
+                fullname: "Mukesh",
+                age: "38 Years",
+                education: "B.tech",
+                year: 2015,
+                dob: "28-03-2002",
+                city: "Bangalore",
+                exp: "2 years",
+                skill: ['html', 'css', 'react']
+            }
+        ];
+
+        const userinfo = () => {
+            let data = "";
+            userlist.map((user, index) => {
+                data +="<div class='myuser'>";
+                data += "<p> Full Name :" + user.fullname + "</p>";
+                data += "<p> Age :" + user.age + "</p>";
+                data += "<p> Education :" + user.education + "</p>";
+                data += "<p> Passing Year :" + user.year + "</p>";
+                data += "<p> Date Of Birth :" + user.dob + "</p>";
+                data += "<p> City :" + user.city + "</p>";
+                data += "<p> Exprience :" + user.exp + "</p>";
+                data += "<p> Skills :" + user.skill + "</p>";
+                data +="</div>";
+            })
+            document.getElementById("container").innerHTML = data;
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="userinfo()">Print User</button>
+    <br />
+    <section id="container"></section>
+</body>
+
+</html>

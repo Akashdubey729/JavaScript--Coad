@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const printcity = (cityname) =>{
+                if( cityname=="")
+                {
+                    document.getElementById("mycity").innerText = "Invallid City";
+                    document.getElementById("mycity").style.color="red";
+                }
+                else
+                {
+                    document.getElementById("mycity").innerText = "Your City Is : " +cityname;
+                    document.getElementById("mycity").style.color="blue";
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <h1> javascript onchange & innerText Example </h1>
+        What Is Your City Name ?
+        <select onchange="printcity(this.value)">
+            <option value="">choose</option>
+            <option>pune</option>
+            <option>Bhubanaswer</option>
+            <option>Mumbai</option>
+            <option>Bangalore</option>
+            <option value="D">Delhi</option>
+        </select>
+        <br/>
+        <h1 id="mycity"> ? </h1>
+    </body>
+</html>

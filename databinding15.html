@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            let itemlist = [
+                {name:"Apple", price:"300", photo:"1.jpeg"},
+                {name:"Mango", price:"200", photo:"2.jpeg"},
+                {name:"Banana", price:"300", photo:"3.jpeg"},
+            ];
+
+            const getitem =()=>{
+                let temp ="";
+                itemlist.map((item, index)=>{
+                    temp += "<tr>"
+                        temp += "<td>" + index + "</td>";
+                        temp += "<td onclick='details("+ index +")'>" + item.name + "</td>";
+                        temp += "<td>" + item.price + "</td>";
+                        temp += "<td> <img src='" + item.photo + "' height='50'/> </td>";
+                        temp += "<td> <button> Delete </button> </td>";
+                    temp += "</tr>"
+                })
+                document.getElementById("container").innerHTML = temp;
+            }
+
+            const save = () =>{
+                let itemname = document.getElementById("itemname").value;
+                let itemprice = document.getElementById("itemprice").value;
+                let photoname = document.getElementById("photoname").value;
+                let newitem = {name:itemname, price:itemprice, photo:photoname};
+                itemlist = itemname.concat( newitem );
+                alert( itemname + " Save Sucessfully !");
+                getitem(); //to Reload The Page
+            }
+
+            const details = (index) =>{
+                console.log( itemlist[index]);
+                document.getElementById("productpic").src=itemlist[index].photo;
+            }
+        </script>
+    </head>
+
+    <body onload="getitem()">
+        <table align="left" cellpadding="15">
+            <tr>
+                <th colspan="2">
+                    <h2> Enter Item Details </h2>
+                </th>
+            </tr>
+            <tr>
+                <th> Item Name</th>
+                <th> <input type="text" id="itemname"></th>
+            </tr>
+            <tr>
+                <th> Item Price</th>
+                <th> <input type="text" id="itemprice"></th>
+            </tr>
+            <tr>
+                <th> Item Photo</th>
+                <th> <input type="text" id="photoname"></th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button onclick="save()"> Save Item </button>
+                </th>
+            </tr>
+        </table>
+        <table align="right" cellpadding="10" width="600">
+            <thead>
+                <tr>
+                    <th> Sl No </th>
+                    <th> item Name </th>
+                    <th> item Price </th>
+                    <th> Photo </th>
+                    <th> Action </th>
+                </tr>
+            </thead>
+            <tbody id="container">
+
+            </tbody>
+        </table>
+
+        <img src="" height="300" width="500" id="productpic"/>
+    </body>
+</html>

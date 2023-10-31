@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        const one = () => {
+            alert(" Hi, Your Message Send...");
+        }
+
+
+        const two = () => {
+            let a = confirm("are you sure ?");
+
+            if (a == true)
+                {alert(" Please Wait Processing...");}
+            else (a == false)
+                {alert("Try Again..")}
+        }
+
+
+        const three = () => {
+            let x = prompt("Enter Your Email Id");
+            alert("Download Link Send To :" + x);
+        }
+    </script>
+    <link rel="stylesheet" href="../../bootstrap/bootstrap-5.3.1 (1)/dist/css/bootstrap.css"/>
+</head>
+
+<body>
+    <h1> Type of popup in java script </h1>
+    <button class="btn btn-danger" onclick="one()"> Alert() </button>
+    <p> Alert() : it gives Confirmatin Message To user , with 1 Ok Button </p>
+
+    <button class="btn btn-warning" onclick="two()"> Confirm() </button>
+    <p> Confirm() : it use to ask confiration from user with 2 button </p>
+    <p> "ok" it Returns => true </p>
+    <p> "cancle" it return => false </p>
+
+    <button onclick="three()"> Prompt </button>
+    <p> prompt() : it use to ask non boolean input from user</p>
+    <p> with "ok" and "cancle" , the cancle button return null </p>
+</body>
+
+</html>

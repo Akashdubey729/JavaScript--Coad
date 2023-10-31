@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        td{ color: blue; font-size: 25px; word-break: break-all;}
+    </style>
+    <script>
+        let userlist = [
+            {
+                fullname: "alex",
+                age: "40 Years",
+                education: "MCA",
+                year: 2010,
+                dob: "25-11-2008",
+                city: "Bangalore",
+                exp: "5 years",
+                skill: ['html', 'css', 'react', 'nodejs', 'javascript', 'php', 'mysql']
+            },
+            {
+                fullname: "Ganesh",
+                age: "42 Years",
+                education: "MA",
+                year: 2013,
+                dob: "28-03-2008",
+                city: "Bangalore",
+                exp: "6 years",
+                skill: ['html', 'css', 'react', 'php', 'mysql']
+            },
+            {
+                fullname: "Mukesh",
+                age: "38 Years",
+                education: "B.tech",
+                year: 2015,
+                dob: "28-03-2002",
+                city: "Bangalore",
+                exp: "2 years",
+                skill: ['html', 'css', 'react']
+            }
+        ];
+
+        const userinfo = () => {
+            let data = "";
+            userlist.map((user, index) => {
+                data +="<tr>";
+                data += "<td>" + user.fullname +    "</td>";
+                data += "<td>" + user.age +         "</td>";
+                data += "<td>" + user.education +   "</td>";
+                data += "<td>" + user.year +        "</td>";
+                data += "<td>" + user.dob +         "</td>";
+                data += "<td>" + user.city +        "</td>";
+                data += "<td>" + user.exp +         "</td>";
+                data += "<td>" + user.skill +       "</td>";
+                data +="</tr>";
+            })
+            document.getElementById("container").innerHTML = data;
+        }
+    </script>
+</head>
+
+<body onload="userinfo()">
+    <h1 align="center"> User List</h1>
+    <br />
+    <table align="center" cellpadding="10" width="100%"  border="1" cellspacing="0">
+        <thead>
+            <tr align="left"> 
+                <th> Name </th>
+                <th> Age </th>
+                <th> Education </th>
+                <th> Passing Year </th>
+                <th> DOB </th>
+                <th> City </th>
+                <th> Exp </th>
+                <th> Skill </th>
+            </tr>
+        </thead>
+        <tbody id="container"></tbody>
+    </table>
+</body>
+
+</html>

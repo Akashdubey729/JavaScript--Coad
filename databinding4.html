@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const one = ()=>{
+                const name = document.getElementById("fname").value.trim();
+                document.getElementById("container").innerText = name;
+
+                document.getElementById("total").innerText = name.length;
+                document.getElementById("pending").innerText = 100 - name.length + " : is left out of 100 char";
+
+                if(name.length >= 80){
+                    document.getElementById("pending").style.color="red";
+                }
+                else{
+                    document.getElementById("pending").style.color="blue";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1> .value and  .innerText Example </h1>
+
+        <p> 
+            <textarea id="fname"onkeyup="one()" rows="10" cols="50" maxlength="100"></textarea>
+        </p>
+
+        <h1 id="container"> No Data </h1>
+        <h1 id="total"> No Data </h1>
+        <p id="pending">100 : is left out of 100 chars </p>
+    </body>
+</html>

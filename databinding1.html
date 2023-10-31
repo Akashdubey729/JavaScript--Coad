@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            let data = "<h1> Welcome To Javascript </h1> <p> it is Simple </p>";
+            let data2 = " Welcome To Javascript it is Simple";
+            const one = ()=>{
+                document.getElementById("container").innerHTML = data;
+            }
+            const two = ()=>{
+                document.getElementById("container").innerText = data2;
+            }
+        </script>
+    </head>
+    <body>
+        <h1> Javascript .innerHTML and >innerText Difference </h1>
+        <button onclick="one()"> innerHTML </button>
+        <button onclick="two()"> innerText </button>
+
+        <br/>
+
+        <div id="container"> No Data </div>
+    </body>
+</html>

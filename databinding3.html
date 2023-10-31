@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const one = ()=>{
+                const name = document.getElementById("fname").value.trim();
+                document.getElementById("container").innerText = name;
+
+                document.getElementById("total").innerText = name.length;
+            }
+        </script>
+    </head>
+    <body>
+        <h1> .value and  .innerText Example </h1>
+
+        <p> 
+            Enter Your Name : <input type="text" id="fname" value="GANESH" onkeyup="one()"/>
+        </p>
+
+        <h1 id="container"> No Data </h1>
+        <h1 id="total"> No Data </h1>
+    </body>
+</html>

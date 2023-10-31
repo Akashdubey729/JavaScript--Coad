@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <style>
+        header{ text-align: center; padding: 15px;}
+        button{ padding: 7px 30px 7px; font-size: 20px; }
+        button:focus{ background: red;}
+        #container{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            width: 80%;
+            margin: auto;
+        }
+        p{
+            font-size: 60px;
+            color: blue;
+            margin: 20px 30px 20px;
+        }
+       </style>
+    </head>
+    <body>
+        <header>
+            <button onclick="one()"> print 1 to 10 </button>
+            <button onclick="two()"> print 10 to 20 </button>
+            <button onclick="three()"> print 1 to 40 odd Number</button>
+            <button onclick="four()"> print 1 to 40 Even Number</button>
+            <button onclick="five()"> Book List</button>
+            <button onclick="six()"> user List</button>
+        </header>
+        <section id="container">
+
+        </section>
+        <script>
+            const six = () =>{
+                let alluser = ["Alex", "Mohit", "Akash", "karan", "Mukesh", "Suresh", "Rohit", "Rajat"];
+                let temp = "";
+                alluser.map((fullname, index)=>{
+                    temp = temp + "<p>" + fullname + "</p>"; 
+                })
+                document.getElementById("container").innerHTML = temp;
+            }
+            const five = () =>{
+                let allbook = ["html", "css", "Javascript", "bootstrap", "react", "node", "python", "angular"];
+                let temp = "";
+                for( let i=0; i<allbook.length; i++ )
+                {
+                    temp = temp + "<p>" + allbook[i] + "</p>";
+                }
+                document.getElementById("container").innerHTML = temp;
+            }
+            const one = () =>{
+                let a = "";
+                for( let i=1; i<=10; i++)
+                {
+                   b="<p>" + i + "</p>";
+                   a = a+b;
+                }
+                document.getElementById("container").innerHTML = a;
+            }
+            const two = () =>{
+                let x ="";
+                for( let i=11; i<=20; i++)
+                {
+                    x= x + "<p>" + i + "</p>";
+                }
+                document.getElementById("container").innerHTML = x;
+            }
+            const three = () =>{
+                let temp = "";
+                for(let i=1; i<=40; i=i+2){
+                    temp = temp + "<p>" + i + "</p>";
+                }
+                document.getElementById("container").innerHTML = temp;
+            }
+            const four = () =>{
+                let temp = "";
+                for(let i=2; i<=40; i=i+2){
+                    temp = temp + "<p>" + i + "</p>";
+                }
+                document.getElementById("container").innerHTML = temp;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const getgender = (gender) => {
+                document.getElementById("mygender").innerText = gender;
+            }
+        </script>
+    </head>
+    <body>
+        <h1> Javascript & Radio button Example </h1>
+        What is your Gender ?
+
+            <p>
+                <label for="x">
+                    <input type="radio" id="x" name="gender" value="MALE" onclick="getgender(this.value)" />MalE
+                </label>
+                <label for="y">
+                    <input type="radio" id="y" name="gender" value="FEMALE" onclick="getgender(this.value)"/>Female
+                </label>
+            </p>
+            <h1 id="mygender"> ? </h1>
+    </body>
+</html>

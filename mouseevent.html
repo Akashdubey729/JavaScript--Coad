@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const one = () =>{
+                alert("The Event Called.....");
+            }
+        </script>
+    </head>
+    <body onload="two(' Welcome To Javascript ')">
+        <h1> Mouse Event Example </h1>
+        <button onclick="one()">1 Click</button>
+        <button onclick="one()">2 Click</button>
+        <button onmousedown="one()">On Mouse Down | left Or right click</button>
+        <button onmouseenter="one()">Enter Mouse in Button Area</button>
+        <button onmouseout="one()"> Comin And Move Out From Button Area</button>
+        <button onmousemove="one()"> Mouse is moving</button>
+        on change : 
+        <select onchange="one()">
+            <option>Month</option>
+            <option>Janury</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>september</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+        </select>
+        <script>
+            const two = (xyz) =>{
+                alert(xyz);
+            }
+        </script>
+        <h1> Keyboard Event Example </h1>
+        <p> on key press : <input type="text" value="APPLE" onkeypress="two(this.value)"/></p>
+        <p> on key up : <input type="text" value="APPLE" onkeyup="two(this.value)"/></p>
+        <p> on key down : <input type="text" value="APPLE" onkeydown="two(this.value)"/></p>
+        <p> on focus : <input type="text" value="APPLE" onfocus="two(this.value)"/></p>
+        <p> on blur : <input type="text" value="APPLE" onblur ="two(this.value)"/></p>
+    </body>
+</html>

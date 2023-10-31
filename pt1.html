@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const printcity = (cityname) =>{
+                document.getElementById("mycity").innerText = cityname;
+            }
+            const one = () =>{
+               const name = document.getElementById("name").value;
+               document.getElementById("myname").innerText = name;
+            }
+            const two = () =>{
+                const name = document.getElementById("address").value;
+                document.getElementById("myaddress").innerText = name;
+            }
+            const getgender = (gender) =>{
+                document.getElementById("mygender").innerText = gender;
+            }
+            const three = () => {
+                var spans = document.getElementsByTagName("h1");
+                var headerText;
+                for (var i = 0; i < spans.length; i++) {
+                    console.log(spans[i].className)
+                    if (spans[i].className == 't1') {
+                        
+                        headerText+=spans[i].innerText + "<br/>";
+                    }
+                }
+               document.getElementById("alldata").innerHTML=headerText; 
+            }
+        </script>
+    </head>
+    <body>
+        <label>Name :</label>
+        <input type="text" id="name" value="yourname" onkeyup="one()"/>
+        <label>Address :</label>
+        <textarea id="address" onkeyup="two()"></textarea>
+        <label> Our Branch :</label>
+        <select onchange="printcity(this.value)">
+            <option>Bhubanaswer</option>
+            <option>Cuttack</option>
+            <option>Baripada</option>
+            <option>Bhadrak</option>
+        </select>
+        <p>Gender
+        <label for="x">
+            <input type="radio" id="x" name="gender" value="MALE" onclick="getgender(this.value)"/>MALE
+        </label>
+        <label for="y">
+            <input type="radio" id="y" name="gender" value="FEMALE" onclick="getgender(this.value)"/>FEMALE
+        </label>
+        </p>
+        <div id="data">
+            <h1 class="t1" id="myname">Name</h1>
+            <h1 class="t1" id="myaddress">Address</h1>
+            <h1 class="t1" id="mycity">City</h1>
+            <h1 class="t1" id="mygender">Gender</h1>
+        </div>
+        <button onclick="three()"> innerHTML </button>
+        <h1 id="alldata">no Data</h1>
+    </body>
+</html>

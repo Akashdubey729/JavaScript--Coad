@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style>
+            #container{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                width: 80%;
+                margin: auto;
+            }
+            .mybook{
+                margin: 20px 40px 20px;
+                padding: 20px 0px 20px;
+                background: purple;
+                color: white;
+                font-size: 22px;
+                text-align: center;
+                box-shadow: 0px 0px 10px purple;
+                border-radius: 5px;
+            }
+            button{
+                height: 40px;
+                width: 80px;
+                border-radius: 20px;
+            }
+        </style>
+        <script>
+            let allbook = ["HTML", "CSS", "Javascript", "REACT", "Angular", "Node", "Python"];
+
+            const delbook = (index) =>{
+                let bookname = allbook[index];
+                allbook.splice(index, 1); 
+                //index the position of element to be deleted
+                //1 is the no of element should get delete from given position
+                getbook();
+                swal(bookname, "Deleted Successfully", "warning");
+
+            }
+            const getbook = () =>{
+            let temp = "";
+            allbook.map((bookname, index)=>{
+                temp = temp + "<div class='mybook'>";
+                temp = temp + "<p>" + bookname + "</p>"
+                temp = temp + "<p>" + bookname.length +  "</p>"
+                temp = temp + "<button onclick='delbook("+ index +")'> Delete </button>";
+                temp = temp + "</div>";
+            })
+            document.getElementById("container").innerHTML = temp;
+            }
+
+            const save = () =>{
+                let newbook = document.getElementById("newbook").value;
+                allbook.push( newbook ); //add new element at end of array
+                getbook(); //to reload after adding new book
+                document.getElementById("newbook").value=""; // empty textbox
+                swal(newbook, "Save Sucessfully", "success");
+            }
+        </script>
+    </head>
+    <body onload="getbook()">
+        <h1 align="center"> Single Dimension Array Add, List, Delete </h1>
+        <div align="center">
+            Enter Book Name : <input type="text" id="newbook"/>
+                              <button onclick="save()"> Save </button>
+        </div>
+        <section id="container">
+
+        </section>
+    </body>
+</html>
